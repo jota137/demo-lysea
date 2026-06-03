@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Lysea | Skincare guiado</title>
+    <meta name="description" content="Tienda online de cosmetica coreana con test de piel, rutinas guiadas y asesoramiento por WhatsApp.">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#inicio" aria-label="Lysea inicio">Lysea</a>
+      <nav class="nav" aria-label="Principal">
+        <a href="#test">Test</a>
+        <a href="#rutinas">Rutinas</a>
+        <a href="#tienda">Tienda</a>
+        <a href="#asesoria">WhatsApp</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="inicio">
+        <img class="hero-image" src="assets/lysea-hero.png" alt="Productos de skincare sobre fondo claro">
+        <div class="hero-content">
+          <p class="eyebrow">Skincare coreano guiado</p>
+          <h1>Cosmetica para tu piel, no para la tendencia.</h1>
+          <p>En Lysea te ayudamos a descubrir que rutina necesitas y que productos usar segun tu tipo de piel, tus necesidades y tu presupuesto.</p>
+          <div class="hero-actions">
+            <a class="button primary" href="#test">Hacer test de piel</a>
+            <a class="button secondary" href="#rutinas">Comprar rutinas</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="intro-band" aria-label="Ventajas">
+        <div>
+          <strong>Test breve</strong>
+          <span>Resultado segun sensacion, preocupacion y presupuesto.</span>
+        </div>
+        <div>
+          <strong>Rutinas listas</strong>
+          <span>Packs para piel grasa, seca, sensible y glow.</span>
+        </div>
+        <div>
+          <strong>Asesoria real</strong>
+          <span>Compra online o consulta por WhatsApp antes de elegir.</span>
+        </div>
+      </section>
+
+      <section class="section split" id="test">
+        <div class="section-copy">
+          <p class="eyebrow">Diagnostico rapido</p>
+          <h2>Tu rutina empieza entendiendo tu piel.</h2>
+          <p>Selecciona lo que mas se parece a tu piel y Lysea te propone una rutina inicial con pasos claros.</p>
+        </div>
+        <div class="quiz" aria-label="Test de piel">
+          <label for="skinFeel">Como sientes tu piel durante el dia</label>
+          <select id="skinFeel">
+            <option value="mixta">Brillo en zona T o poros visibles</option>
+            <option value="seca">Tirantez o falta de hidratacion</option>
+            <option value="sensible">Rojeces, picor o piel reactiva</option>
+            <option value="glow">Manchas, tono apagado o falta de luz</option>
+          </select>
+
+          <label for="routineLevel">Tipo de rutina</label>
+          <select id="routineLevel">
+            <option value="basica">Basica</option>
+            <option value="media">Media</option>
+            <option value="completa">Completa</option>
+          </select>
+
+          <label for="budget">Presupuesto</label>
+          <select id="budget">
+            <option value="medio">Medio</option>
+            <option value="bajo">Bajo</option>
+            <option value="alto">Alto</option>
+          </select>
+
+          <button class="button primary full" id="quizButton" type="button">Ver recomendacion</button>
+          <div class="result" id="quizResult" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <section class="section" id="rutinas">
+        <div class="section-heading">
+          <p class="eyebrow">Packs comerciales</p>
+          <h2>Rutinas por tipo de piel</h2>
+        </div>
+        <div class="routine-grid" id="routineGrid"></div>
+      </section>
+
+      <section class="section store" id="tienda">
+        <div class="section-heading">
+          <p class="eyebrow">Catalogo MVP</p>
+          <h2>Productos seleccionados</h2>
+        </div>
+        <div class="filters" aria-label="Filtros de productos">
+          <button class="filter active" type="button" data-filter="Todos">Todos</button>
+          <button class="filter" type="button" data-filter="Limpiadores">Limpieza</button>
+          <button class="filter" type="button" data-filter="Tonicos y esencias">Tonicos</button>
+          <button class="filter" type="button" data-filter="Serums y tratamientos">Serums</button>
+          <button class="filter" type="button" data-filter="Cremas hidratantes">Cremas</button>
+          <button class="filter" type="button" data-filter="Protectores solares">SPF</button>
+        </div>
+        <div class="product-grid" id="productGrid"></div>
+      </section>
+
+      <section class="section story">
+        <div class="story-copy">
+          <p class="eyebrow">Sobre Lysea</p>
+          <h2>No vendemos productos al azar.</h2>
+          <p>Lysea combina cosmetica coreana, seleccion de productos y una experiencia de compra guiada. La idea es simple: primero entender la piel, despues elegir la rutina.</p>
+        </div>
+        <div class="steps" aria-label="Recorrido de compra">
+          <span>Inicio</span>
+          <span>Test de piel</span>
+          <span>Pack recomendado</span>
+          <span>Compra o WhatsApp</span>
+        </div>
+      </section>
+
+      <section class="contact-band" id="asesoria">
+        <div>
+          <p class="eyebrow">Asesoria personalizada</p>
+          <h2>Prefieres que revisemos tu caso?</h2>
+          <p>Envia una consulta con tu tipo de piel, preocupacion principal y presupuesto. Te ayudamos a montar una rutina sin pasos de mas.</p>
+        </div>
+        <a class="button primary" href="https://wa.me/" target="_blank" rel="noreferrer">Consultar por WhatsApp</a>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>Lysea</span>
+      <span>Skincare guiado con envios a toda Espana.</span>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
