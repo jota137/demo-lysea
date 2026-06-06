@@ -187,7 +187,6 @@ const productImages = {
   "Rovectin Cica Care Clearing Ampoule": "product-images/rovectin-cica-care-clearing-ampoule.jpg",
   "Sioris Deep In A Barrier Cream": "product-images/sioris-deep-in-a-barrier-cream.jpg",
   "Benton Snail Bee High Content Steam Cream": "product-images/benton-snail-bee-high-content-steam-cream.jpg",
-  "Benton Aloe Propolis Soothing Gel": "product-images/benton-aloe-propolis-soothing-gel.jpg",
   "COSRX Aloe Soothing Sun Cream SPF50+": "product-images/cosrx-aloe-soothing-sun-cream-spf50.jpg",
   "Peach Peptide Repair Lip Balm (Cacao)": "product-images/peach-peptide-repair-lip-balm.jpg",
   "Benton Goodbye Redness Centella Cica Mask": "product-images/goodbye-redness-centella-cica-mask.jpg",
@@ -463,7 +462,7 @@ function renderProducts(filter = "Todos") {
   productGrid.innerHTML = visible.map((product) => `
     <article class="product-card">
       <div class="product-visual">
-        ${productImages[productTitle(product)] ? `<img src="${productImages[productTitle(product)]}" alt="${productTitle(product)}">` : `<div class="bottle" aria-hidden="true"></div>`}
+        ${productImages[productTitle(product)] ? `<img src="${productImages[productTitle(product)]}" alt="${productTitle(product)}">` : `<div class="image-pending"><span>Imagen pendiente</span></div>`}
       </div>
       <div class="product-body">
         <span class="product-category">${product.category}</span>
