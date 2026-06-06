@@ -172,6 +172,28 @@ const products = [
   }
 ];
 
+const productImages = {
+  "COSRX Low pH Good Morning Gel Cleanser": "product-images/cosrx-low-ph-good-morning-gel-cleanser.jpg",
+  "Klairs Rich Moist Foaming Cleanser": "product-images/klairs-rich-moist-foaming-cleanser.jpg",
+  "Klairs Gentle Black Deep Cleansing Oil": "product-images/klairs-gentle-black-deep-cleansing-oil.jpg",
+  "Meisani Vitamin E-Raser Cleansing Oil": "product-images/meisani-vitamin-e-raser-cleansing-oil.jpg",
+  "Anua Heartleaf 77 Soothing Toner": "product-images/anua-heartleaf-77-soothing-toner.jpg",
+  "Sioris Time Is Running Out Mist": "product-images/sioris-time-is-running-out-mist.jpg",
+  "Benton Snail Bee High Content Skin Toner": "product-images/benton-snail-bee-high-content-skin-toner.jpg",
+  "Anua Heartleaf 80% Soothing Ampoule": "product-images/anua-heartleaf-80-soothing-ampoule.jpg",
+  "Anua Heartleaf 77% Soothing Toner": "product-images/anua-heartleaf-77-soothing-toner-serum.jpg",
+  "Klairs Rich Moist Soothing Serum": "product-images/klairs-rich-moist-soothing-serum.jpg",
+  "Belif Super Drops Niacinamide & Vitamin C": "product-images/belif-super-drops-niacinamide-vitamin-c.jpg",
+  "Rovectin Cica Care Clearing Ampoule": "product-images/rovectin-cica-care-clearing-ampoule.jpg",
+  "Sioris Deep In A Barrier Cream": "product-images/sioris-deep-in-a-barrier-cream.jpg",
+  "Benton Snail Bee High Content Steam Cream": "product-images/benton-snail-bee-high-content-steam-cream.jpg",
+  "Benton Aloe Propolis Soothing Gel": "product-images/benton-aloe-propolis-soothing-gel.jpg",
+  "COSRX Aloe Soothing Sun Cream SPF50+": "product-images/cosrx-aloe-soothing-sun-cream-spf50.jpg",
+  "Peach Peptide Repair Lip Balm (Cacao)": "product-images/peach-peptide-repair-lip-balm.jpg",
+  "Benton Goodbye Redness Centella Cica Mask": "product-images/goodbye-redness-centella-cica-mask.jpg",
+  "Village 11 Factory Miracle Youth Serum (Retinol)": "product-images/village-11-factory-miracle-youth-serum.jpg"
+};
+
 const routines = [
   {
     tag: "Equilibrio",
@@ -440,7 +462,9 @@ function renderProducts(filter = "Todos") {
   const visible = filter === "Todos" ? products : products.filter((product) => product.category === filter);
   productGrid.innerHTML = visible.map((product) => `
     <article class="product-card">
-      <div class="product-visual" aria-hidden="true"><div class="bottle"></div></div>
+      <div class="product-visual">
+        ${productImages[productTitle(product)] ? `<img src="${productImages[productTitle(product)]}" alt="${productTitle(product)}">` : `<div class="bottle" aria-hidden="true"></div>`}
+      </div>
       <div class="product-body">
         <span class="product-category">${product.category}</span>
         <h3>${product.brand} ${product.name}</h3>
