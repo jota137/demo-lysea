@@ -173,24 +173,24 @@ const products = [
 ];
 
 const productImages = {
-  "COSRX Low pH Good Morning Gel Cleanser": "product-images/cosrx-low-ph-good-morning-gel-cleanser.jpg",
-  "Klairs Rich Moist Foaming Cleanser": "product-images/klairs-rich-moist-foaming-cleanser.jpg",
-  "Klairs Gentle Black Deep Cleansing Oil": "product-images/klairs-gentle-black-deep-cleansing-oil.jpg",
-  "Meisani Vitamin E-Raser Cleansing Oil": "product-images/meisani-vitamin-e-raser-cleansing-oil.jpg",
-  "Anua Heartleaf 77 Soothing Toner": "product-images/anua-heartleaf-77-soothing-toner.jpg",
-  "Sioris Time Is Running Out Mist": "product-images/sioris-time-is-running-out-mist.jpg",
-  "Benton Snail Bee High Content Skin Toner": "product-images/benton-snail-bee-high-content-skin-toner.jpg",
-  "Anua Heartleaf 80% Soothing Ampoule": "product-images/anua-heartleaf-80-soothing-ampoule.jpg",
-  "Anua Heartleaf 77% Soothing Toner": "product-images/anua-heartleaf-77-soothing-toner-serum.jpg",
-  "Klairs Rich Moist Soothing Serum": "product-images/klairs-rich-moist-soothing-serum.jpg",
-  "Belif Super Drops Niacinamide & Vitamin C": "product-images/belif-super-drops-niacinamide-vitamin-c.jpg",
-  "Rovectin Cica Care Clearing Ampoule": "product-images/rovectin-cica-care-clearing-ampoule.jpg",
-  "Sioris Deep In A Barrier Cream": "product-images/sioris-deep-in-a-barrier-cream.jpg",
-  "Benton Snail Bee High Content Steam Cream": "product-images/benton-snail-bee-high-content-steam-cream.jpg",
-  "COSRX Aloe Soothing Sun Cream SPF50+": "product-images/cosrx-aloe-soothing-sun-cream-spf50.jpg",
-  "Peach Peptide Repair Lip Balm (Cacao)": "product-images/peach-peptide-repair-lip-balm.jpg",
-  "Benton Goodbye Redness Centella Cica Mask": "product-images/goodbye-redness-centella-cica-mask.jpg",
-  "Village 11 Factory Miracle Youth Serum (Retinol)": "product-images/village-11-factory-miracle-youth-serum.jpg"
+  "COSRX Low pH Good Morning Gel Cleanser": ["product-images/cosrx-low-ph-good-morning-gel-cleanser-1.jpg", "product-images/cosrx-low-ph-good-morning-gel-cleanser-2.jpg", "product-images/cosrx-low-ph-good-morning-gel-cleanser-3.jpg", "product-images/cosrx-low-ph-good-morning-gel-cleanser-4.jpg"],
+  "Klairs Rich Moist Foaming Cleanser": ["product-images/klairs-rich-moist-foaming-cleanser-1.jpg", "product-images/klairs-rich-moist-foaming-cleanser-2.jpg", "product-images/klairs-rich-moist-foaming-cleanser-3.jpg", "product-images/klairs-rich-moist-foaming-cleanser-4.jpg"],
+  "Klairs Gentle Black Deep Cleansing Oil": ["product-images/klairs-gentle-black-deep-cleansing-oil-1.jpg", "product-images/klairs-gentle-black-deep-cleansing-oil-2.jpg", "product-images/klairs-gentle-black-deep-cleansing-oil-3.jpg", "product-images/klairs-gentle-black-deep-cleansing-oil-4.jpg"],
+  "Meisani Vitamin E-Raser Cleansing Oil": ["product-images/meisani-vitamin-e-raser-cleansing-oil-1.jpg", "product-images/meisani-vitamin-e-raser-cleansing-oil-2.jpg", "product-images/meisani-vitamin-e-raser-cleansing-oil-3.jpg", "product-images/meisani-vitamin-e-raser-cleansing-oil-4.jpg"],
+  "Anua Heartleaf 77 Soothing Toner": ["product-images/anua-heartleaf-77-soothing-toner-1.jpg", "product-images/anua-heartleaf-77-soothing-toner-2.jpg", "product-images/anua-heartleaf-77-soothing-toner-3.jpg", "product-images/anua-heartleaf-77-soothing-toner-4.jpg"],
+  "Sioris Time Is Running Out Mist": ["product-images/sioris-time-is-running-out-mist-1.jpg", "product-images/sioris-time-is-running-out-mist-2.jpg", "product-images/sioris-time-is-running-out-mist-3.jpg", "product-images/sioris-time-is-running-out-mist-4.jpg"],
+  "Benton Snail Bee High Content Skin Toner": ["product-images/benton-snail-bee-high-content-skin-toner-1.jpg", "product-images/benton-snail-bee-high-content-skin-toner-2.jpg", "product-images/benton-snail-bee-high-content-skin-toner-3.jpg", "product-images/benton-snail-bee-high-content-skin-toner-4.jpg"],
+  "Anua Heartleaf 80% Soothing Ampoule": ["product-images/anua-heartleaf-80-soothing-ampoule-1.jpg", "product-images/anua-heartleaf-80-soothing-ampoule-2.jpg", "product-images/anua-heartleaf-80-soothing-ampoule-3.jpg", "product-images/anua-heartleaf-80-soothing-ampoule-4.jpg"],
+  "Anua Heartleaf 77% Soothing Toner": ["product-images/anua-heartleaf-77-soothing-toner-serum-1.jpg", "product-images/anua-heartleaf-77-soothing-toner-serum-2.jpg", "product-images/anua-heartleaf-77-soothing-toner-serum-3.jpg", "product-images/anua-heartleaf-77-soothing-toner-serum-4.jpg"],
+  "Klairs Rich Moist Soothing Serum": ["product-images/klairs-rich-moist-soothing-serum-1.jpg", "product-images/klairs-rich-moist-soothing-serum-2.jpg", "product-images/klairs-rich-moist-soothing-serum-3.jpg", "product-images/klairs-rich-moist-soothing-serum-4.jpg"],
+  "Belif Super Drops Niacinamide & Vitamin C": ["product-images/belif-super-drops-niacinamide-vitamin-c-1.jpg", "product-images/belif-super-drops-niacinamide-vitamin-c-2.jpg", "product-images/belif-super-drops-niacinamide-vitamin-c-3.jpg", "product-images/belif-super-drops-niacinamide-vitamin-c-4.jpg"],
+  "Rovectin Cica Care Clearing Ampoule": ["product-images/rovectin-cica-care-clearing-ampoule-1.jpg"],
+  "Sioris Deep In A Barrier Cream": ["product-images/sioris-deep-in-a-barrier-cream-1.jpg", "product-images/sioris-deep-in-a-barrier-cream-2.jpg", "product-images/sioris-deep-in-a-barrier-cream-3.jpg", "product-images/sioris-deep-in-a-barrier-cream-4.jpg"],
+  "Benton Snail Bee High Content Steam Cream": ["product-images/benton-snail-bee-high-content-steam-cream-1.jpg", "product-images/benton-snail-bee-high-content-steam-cream-2.jpg", "product-images/benton-snail-bee-high-content-steam-cream-3.jpg", "product-images/benton-snail-bee-high-content-steam-cream-4.jpg"],
+  "COSRX Aloe Soothing Sun Cream SPF50+": ["product-images/cosrx-aloe-soothing-sun-cream-spf50-1.jpg", "product-images/cosrx-aloe-soothing-sun-cream-spf50-2.jpg", "product-images/cosrx-aloe-soothing-sun-cream-spf50-3.jpg", "product-images/cosrx-aloe-soothing-sun-cream-spf50-4.jpg"],
+  "Peach Peptide Repair Lip Balm (Cacao)": ["product-images/peach-peptide-repair-lip-balm-1.jpg", "product-images/peach-peptide-repair-lip-balm-2.jpg", "product-images/peach-peptide-repair-lip-balm-3.jpg", "product-images/peach-peptide-repair-lip-balm-4.jpg"],
+  "Benton Goodbye Redness Centella Cica Mask": ["product-images/goodbye-redness-centella-cica-mask-1.jpg", "product-images/goodbye-redness-centella-cica-mask-2.jpg", "product-images/goodbye-redness-centella-cica-mask-3.jpg", "product-images/goodbye-redness-centella-cica-mask-4.jpg"],
+  "Village 11 Factory Miracle Youth Serum (Retinol)": ["product-images/village-11-factory-miracle-youth-serum-1.jpg", "product-images/village-11-factory-miracle-youth-serum-2.jpg", "product-images/village-11-factory-miracle-youth-serum-3.jpg", "product-images/village-11-factory-miracle-youth-serum-4.jpg"]
 };
 
 const routines = [
@@ -351,17 +351,30 @@ function productTitle(product) {
 }
 
 function findProductPrice(name) {
+  const product = findProductMatch(name);
+  return product ? parsePrice(product.price) : 0;
+}
+
+function findProductMatch(name) {
   const target = normalizeName(name);
-  const product = products.find((item) => {
+  return products.find((item) => {
     const title = normalizeName(productTitle(item));
     const shortName = normalizeName(item.name);
     return title.includes(target) || target.includes(title) || shortName.includes(target) || target.includes(shortName);
   });
-  return product ? parsePrice(product.price) : 0;
 }
 
 function packPrice(routine) {
   return routine.packItems.reduce((total, item) => total + findProductPrice(item), 0);
+}
+
+function routineProductPrice(productName) {
+  const product = findProductMatch(productName);
+  return product ? product.price : "Pendiente";
+}
+
+function uniquePackItems(routine) {
+  return [...new Set(routine.packItems)];
 }
 
 function openCart() {
@@ -437,17 +450,23 @@ function renderRoutines() {
           <div class="routine-time">
             <strong>Manana</strong>
             <ul>
-              ${routine.morning.map(([step, product]) => `<li><span>${step}</span><em>${product}</em></li>`).join("")}
+              ${routine.morning.map(([step, product]) => `<li><span>${step}</span><em>${product}</em><small>${routineProductPrice(product)}</small></li>`).join("")}
             </ul>
           </div>
           <div class="routine-time">
             <strong>Noche</strong>
             <ul>
-              ${routine.night.map(([step, product]) => `<li><span>${step}</span><em>${product}</em></li>`).join("")}
+              ${routine.night.map(([step, product]) => `<li><span>${step}</span><em>${product}</em><small>${routineProductPrice(product)}</small></li>`).join("")}
             </ul>
           </div>
         </div>
         ${routine.pendingItems ? `<p class="routine-note">${routine.pendingItems.join(". ")}</p>` : ""}
+        <div class="pack-breakdown">
+          <strong>Incluye el pack</strong>
+          <ul>
+            ${uniquePackItems(routine).map((item) => `<li><span>${item}</span><em>${routineProductPrice(item)}</em></li>`).join("")}
+          </ul>
+        </div>
       </div>
       <div class="pack-footer">
         <strong>${formatPrice(packPrice(routine))}</strong>
@@ -459,11 +478,19 @@ function renderRoutines() {
 
 function renderProducts(filter = "Todos") {
   const visible = filter === "Todos" ? products : products.filter((product) => product.category === filter);
-  productGrid.innerHTML = visible.map((product) => `
+  productGrid.innerHTML = visible.map((product) => {
+    const title = productTitle(product);
+    const images = productImages[title] || [];
+    return `
     <article class="product-card">
       <div class="product-visual">
-        ${productImages[productTitle(product)] ? `<img src="${productImages[productTitle(product)]}" alt="${productTitle(product)}">` : `<div class="image-pending"><span>Imagen pendiente</span></div>`}
+        ${images.length ? `<img src="${images[0]}" alt="${title}" data-main-image="${title}">` : `<div class="image-pending"><span>Imagen pendiente</span></div>`}
       </div>
+      ${images.length > 1 ? `
+        <div class="product-thumbs" aria-label="Mas imagenes de ${title}">
+          ${images.map((image, index) => `<button class="${index === 0 ? "active" : ""}" type="button" data-gallery-product="${title}" data-gallery-image="${image}" aria-label="Ver imagen ${index + 1}"><img src="${image}" alt=""></button>`).join("")}
+        </div>
+      ` : ""}
       <div class="product-body">
         <span class="product-category">${product.category}</span>
         <h3>${product.brand} ${product.name}</h3>
@@ -473,7 +500,8 @@ function renderProducts(filter = "Todos") {
         <button class="button secondary" type="button" data-product="${productTitle(product)}">Anadir al carrito</button>
       </div>
     </article>
-  `).join("");
+  `;
+  }).join("");
 }
 
 filters.forEach((button) => {
@@ -496,6 +524,16 @@ routineGrid.addEventListener("click", (event) => {
 });
 
 productGrid.addEventListener("click", (event) => {
+  const thumb = event.target.closest("[data-gallery-image]");
+  if (thumb) {
+    const card = thumb.closest(".product-card");
+    const mainImage = card.querySelector("[data-main-image]");
+    mainImage.src = thumb.dataset.galleryImage;
+    card.querySelectorAll(".product-thumbs button").forEach((button) => button.classList.remove("active"));
+    thumb.classList.add("active");
+    return;
+  }
+
   const button = event.target.closest("[data-product]");
   if (!button) return;
   const product = products.find((item) => productTitle(item) === button.dataset.product);
