@@ -18,6 +18,9 @@
         <a href="#tienda">Tienda</a>
         <a href="#asesoria">WhatsApp</a>
       </nav>
+      <button class="cart-toggle" id="cartToggle" type="button" aria-label="Abrir carrito">
+        Carrito <span id="cartCount">0</span>
+      </button>
     </header>
 
     <main>
@@ -137,6 +140,27 @@
       <img class="footer-logo" src="lysea-logo-cropped.jpeg" alt="Lysea">
       <span>Skincare guiado con envios a toda Espana.</span>
     </footer>
+
+    <div class="cart-overlay" id="cartOverlay" hidden></div>
+    <aside class="cart-panel" id="cartPanel" aria-label="Carrito de compra" aria-hidden="true">
+      <div class="cart-head">
+        <div>
+          <p class="eyebrow">Compra demo</p>
+          <h2>Carrito</h2>
+        </div>
+        <button class="icon-button" id="cartClose" type="button" aria-label="Cerrar carrito">x</button>
+      </div>
+      <div class="cart-items" id="cartItems"></div>
+      <div class="cart-empty" id="cartEmpty">Tu carrito esta vacio.</div>
+      <div class="cart-summary">
+        <div>
+          <span>Total estimado</span>
+          <strong id="cartTotal">0,00 EUR</strong>
+        </div>
+        <button class="button primary full" id="checkoutButton" type="button">Pedir por WhatsApp</button>
+        <button class="button secondary full" id="clearCartButton" type="button">Vaciar carrito</button>
+      </div>
+    </aside>
 
     <script src="app.js"></script>
   </body>

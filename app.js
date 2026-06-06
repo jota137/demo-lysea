@@ -187,6 +187,13 @@ const routines = [
       ["Tonico", "Anua Heartleaf 77 Soothing Toner"],
       ["Serum calmante", "Anua - Heartleaf 80% Soothing Ampoule"],
       ["Crema gel", "Sioris - Deep In A Barrier Cream"]
+    ],
+    packItems: [
+      "COSRX Low pH Good Morning Gel Cleanser",
+      "Anua Heartleaf 77 Soothing Toner",
+      "Anua Heartleaf 80% Soothing Ampoule",
+      "Sioris Deep In A Barrier Cream",
+      "COSRX Aloe Soothing Sun Cream SPF50+"
     ]
   },
   {
@@ -206,7 +213,15 @@ const routines = [
       ["Esencia", "Sioris - Time Is Running Out Mist"],
       ["Serum", "Klairs - Rich Moist Soothing Serum"],
       ["Crema", "Benton - Snail Bee High Content Steam Cream"]
-    ]
+    ],
+    packItems: [
+      "Klairs Rich Moist Foaming Cleanser",
+      "Klairs Gentle Black Deep Cleansing Oil",
+      "Sioris Time Is Running Out Mist",
+      "Klairs Rich Moist Soothing Serum",
+      "Benton Snail Bee High Content Steam Cream"
+    ],
+    pendingItems: ["SPF hidratante pendiente de confirmar"]
   },
   {
     tag: "Calma",
@@ -223,7 +238,15 @@ const routines = [
       ["Limpieza", "Klairs - Rich Moist Foaming Cleanser"],
       ["Serum", "Rovectin - Cica Care Clearing Ampoule"],
       ["Crema barrera", "Benton - Aloe Propolis Soothing Gel"]
-    ]
+    ],
+    packItems: [
+      "Klairs Rich Moist Foaming Cleanser",
+      "Klairs Gentle Black Deep Cleansing Oil",
+      "Anua Heartleaf 77 Soothing Toner",
+      "Rovectin Cica Care Clearing Ampoule",
+      "Benton Aloe Propolis Soothing Gel"
+    ],
+    pendingItems: ["SPF suave pendiente de confirmar"]
   },
   {
     tag: "Glow",
@@ -241,6 +264,14 @@ const routines = [
       ["Segunda limpieza", "Klairs - Rich Moist Foaming Cleanser"],
       ["Tratamiento", "Belif - Super Drops 5% Niacinamide & Vitamin C"],
       ["Crema", "Benton - Snail Bee High Content Steam Cream"]
+    ],
+    packItems: [
+      "Klairs Rich Moist Foaming Cleanser",
+      "Klairs Gentle Black Deep Cleansing Oil",
+      "Sioris Time Is Running Out Mist",
+      "Belif Super Drops Niacinamide & Vitamin C",
+      "Benton Snail Bee High Content Steam Cream",
+      "COSRX Aloe Soothing Sun Cream SPF50+"
     ]
   }
 ];
@@ -269,6 +300,110 @@ const productGrid = document.querySelector("#productGrid");
 const filters = document.querySelectorAll(".filter");
 const quizButton = document.querySelector("#quizButton");
 const quizResult = document.querySelector("#quizResult");
+const cartToggle = document.querySelector("#cartToggle");
+const cartClose = document.querySelector("#cartClose");
+const cartPanel = document.querySelector("#cartPanel");
+const cartOverlay = document.querySelector("#cartOverlay");
+const cartItems = document.querySelector("#cartItems");
+const cartEmpty = document.querySelector("#cartEmpty");
+const cartCount = document.querySelector("#cartCount");
+const cartTotal = document.querySelector("#cartTotal");
+const checkoutButton = document.querySelector("#checkoutButton");
+const clearCartButton = document.querySelector("#clearCartButton");
+
+const cart = [];
+
+function parsePrice(price) {
+  return Number(price.replace(" EUR", "").replace(",", "."));
+}
+
+function formatPrice(value) {
+  return `${value.toFixed(2).replace(".", ",")} EUR`;
+}
+
+function normalizeName(value) {
+  return value.toLowerCase().replace(/[^a-z0-9]+/g, "");
+}
+
+function productTitle(product) {
+  return `${product.brand} ${product.name}`;
+}
+
+function findProductPrice(name) {
+  const target = normalizeName(name);
+  const product = products.find((item) => {
+    const title = normalizeName(productTitle(item));
+    const shortName = normalizeName(item.name);
+    return title.includes(target) || target.includes(title) || shortName.includes(target) || target.includes(shortName);
+  });
+  return product ? parsePrice(product.price) : 0;
+}
+
+function packPrice(routine) {
+  return routine.packItems.reduce((total, item) => total + findProductPrice(item), 0);
+}
+
+function openCart() {
+  cartPanel.setAttribute("aria-hidden", "false");
+  cartPanel.classList.add("visible");
+  cartOverlay.hidden = false;
+}
+
+function closeCart() {
+  cartPanel.setAttribute("aria-hidden", "true");
+  cartPanel.classList.remove("visible");
+  cartOverlay.hidden = true;
+}
+
+function addToCart(item) {
+  const existing = cart.find((cartItem) => cartItem.id === item.id);
+  if (existing) {
+    existing.quantity += 1;
+  } else {
+    cart.push({ ...item, quantity: 1 });
+  }
+  renderCart();
+  openCart();
+}
+
+function updateQuantity(id, delta) {
+  const item = cart.find((cartItem) => cartItem.id === id);
+  if (!item) return;
+  item.quantity += delta;
+  if (item.quantity <= 0) {
+    cart.splice(cart.indexOf(item), 1);
+  }
+  renderCart();
+}
+
+function renderCart() {
+  const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+  const totalPrice = cart.reduce((total, item) => total + item.price * item.quantity, 0);
+  cartCount.textContent = totalItems;
+  cartTotal.textContent = formatPrice(totalPrice);
+  cartEmpty.hidden = cart.length > 0;
+  cartItems.innerHTML = cart.map((item) => `
+    <div class="cart-item">
+      <div>
+        <strong>${item.name}</strong>
+        <span>${formatPrice(item.price)}</span>
+      </div>
+      <div class="quantity-control">
+        <button type="button" data-cart-minus="${item.id}" aria-label="Quitar unidad">-</button>
+        <span>${item.quantity}</span>
+        <button type="button" data-cart-plus="${item.id}" aria-label="Anadir unidad">+</button>
+      </div>
+    </div>
+  `).join("");
+}
+
+function checkoutByWhatsApp() {
+  if (!cart.length) return;
+  const lines = cart.map((item) => `- ${item.quantity} x ${item.name} (${formatPrice(item.price * item.quantity)})`);
+  const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+  const message = encodeURIComponent(`Hola Lysea, quiero consultar este pedido:\n\n${lines.join("\n")}\n\nTotal estimado: ${formatPrice(total)}`);
+  window.open(`https://wa.me/?text=${message}`, "_blank", "noreferrer");
+}
 
 function renderRoutines() {
   routineGrid.innerHTML = routines.map((routine) => `
@@ -291,8 +426,12 @@ function renderRoutines() {
             </ul>
           </div>
         </div>
+        ${routine.pendingItems ? `<p class="routine-note">${routine.pendingItems.join(". ")}</p>` : ""}
       </div>
-      <a class="button secondary" href="#asesoria">Consultar pack</a>
+      <div class="pack-footer">
+        <strong>${formatPrice(packPrice(routine))}</strong>
+        <button class="button secondary" type="button" data-pack="${routine.title}">Anadir pack</button>
+      </div>
     </article>
   `).join("");
 }
@@ -308,6 +447,7 @@ function renderProducts(filter = "Todos") {
         <p>${product.description}</p>
         <p>${product.skin} - ${product.concern}</p>
         <strong class="product-price">${product.price}</strong>
+        <button class="button secondary" type="button" data-product="${productTitle(product)}">Anadir al carrito</button>
       </div>
     </article>
   `).join("");
@@ -319,6 +459,44 @@ filters.forEach((button) => {
     button.classList.add("active");
     renderProducts(button.dataset.filter);
   });
+});
+
+routineGrid.addEventListener("click", (event) => {
+  const button = event.target.closest("[data-pack]");
+  if (!button) return;
+  const routine = routines.find((item) => item.title === button.dataset.pack);
+  addToCart({
+    id: `pack-${normalizeName(routine.title)}`,
+    name: `Pack ${routine.title}`,
+    price: packPrice(routine)
+  });
+});
+
+productGrid.addEventListener("click", (event) => {
+  const button = event.target.closest("[data-product]");
+  if (!button) return;
+  const product = products.find((item) => productTitle(item) === button.dataset.product);
+  addToCart({
+    id: `product-${normalizeName(productTitle(product))}`,
+    name: productTitle(product),
+    price: parsePrice(product.price)
+  });
+});
+
+cartItems.addEventListener("click", (event) => {
+  const plus = event.target.closest("[data-cart-plus]");
+  const minus = event.target.closest("[data-cart-minus]");
+  if (plus) updateQuantity(plus.dataset.cartPlus, 1);
+  if (minus) updateQuantity(minus.dataset.cartMinus, -1);
+});
+
+cartToggle.addEventListener("click", openCart);
+cartClose.addEventListener("click", closeCart);
+cartOverlay.addEventListener("click", closeCart);
+checkoutButton.addEventListener("click", checkoutByWhatsApp);
+clearCartButton.addEventListener("click", () => {
+  cart.splice(0, cart.length);
+  renderCart();
 });
 
 quizButton.addEventListener("click", () => {
@@ -336,3 +514,4 @@ quizButton.addEventListener("click", () => {
 
 renderRoutines();
 renderProducts();
+renderCart();
