@@ -20,11 +20,20 @@ const products = [
   {
     brand: "Klairs",
     name: "Gentle Black Deep Cleansing Oil",
-    category: "Limpiadores",
+    category: "Aceites y balsamos",
     skin: "Piel seca o sensible",
     concern: "Doble limpieza",
     price: "24,99 EUR",
     description: "Aceite limpiador para retirar SPF o maquillaje antes de la segunda limpieza."
+  },
+  {
+    brand: "Meisani",
+    name: "Vitamin E-Raser Cleansing Oil",
+    category: "Aceites y balsamos",
+    skin: "Rutinas con SPF o maquillaje",
+    concern: "Doble limpieza",
+    price: "24,99 EUR",
+    description: "Aceite limpiador para iniciar una doble limpieza suave al final del dia."
   },
   {
     brand: "Anua",
@@ -45,6 +54,15 @@ const products = [
     description: "Mist hidratante para aportar una capa ligera de confort durante la rutina."
   },
   {
+    brand: "Benton",
+    name: "Snail Bee High Content Skin Toner",
+    category: "Tonicos y esencias",
+    skin: "Piel seca o apagada",
+    concern: "Hidratacion y textura",
+    price: "22,99 EUR",
+    description: "Tonico hidratante para preparar la piel y aportar confort antes del tratamiento."
+  },
+  {
     brand: "Anua",
     name: "Heartleaf 80% Soothing Ampoule",
     category: "Serums y tratamientos",
@@ -52,6 +70,15 @@ const products = [
     concern: "Equilibrio e imperfecciones",
     price: "25,99 EUR",
     description: "Ampolla ligera orientada a calmar y acompanar pieles con tendencia a desequilibrarse."
+  },
+  {
+    brand: "Anua",
+    name: "Heartleaf 77% Soothing Toner",
+    category: "Serums y tratamientos",
+    skin: "Piel sensible o mixta",
+    concern: "Calma y equilibrio",
+    price: "25,99 EUR",
+    description: "Tratamiento calmante de heartleaf para pieles que buscan equilibrio y confort."
   },
   {
     brand: "Klairs",
@@ -115,6 +142,33 @@ const products = [
     concern: "Proteccion diaria",
     price: "21,99 EUR",
     description: "Protector solar diario con textura comoda para cerrar la rutina de manana."
+  },
+  {
+    brand: "Peach",
+    name: "Peptide Repair Lip Balm (Cacao)",
+    category: "Extras",
+    skin: "Labios secos",
+    concern: "Reparacion y confort",
+    price: "24,99 EUR",
+    description: "Balsamo labial reparador para completar la rutina diaria."
+  },
+  {
+    brand: "Benton",
+    name: "Goodbye Redness Centella Cica Mask",
+    category: "Extras",
+    skin: "Piel sensible o con rojeces",
+    concern: "Calma puntual",
+    price: "2,99 EUR",
+    description: "Mascarilla de centella para momentos en los que la piel necesita calma extra."
+  },
+  {
+    brand: "Village 11 Factory",
+    name: "Miracle Youth Serum (Retinol)",
+    category: "Extras",
+    skin: "Piel madura",
+    concern: "Lineas, textura y renovacion",
+    price: "32,99 EUR",
+    description: "Serum con retinol para rutinas de noche orientadas a textura y signos de edad."
   }
 ];
 
@@ -123,25 +177,71 @@ const routines = [
     tag: "Equilibrio",
     title: "Piel grasa o mixta",
     goal: "Controlar brillo, poros y sensacion de desequilibrio sin resecar.",
-    steps: ["COSRX Low pH Cleanser", "Anua Heartleaf Toner", "Anua Heartleaf Ampoule", "Sioris Barrier Cream", "COSRX Aloe SPF50+"]
+    morning: [
+      ["Limpiador", "COSRX - Low pH Good Morning Gel Cleanser"],
+      ["Serum", "Anua - Heartleaf 80% Soothing Ampoule"],
+      ["Protector solar", "COSRX Aloe Soothing Sun Cream SPF50+"]
+    ],
+    night: [
+      ["Limpiador", "COSRX - Low pH Good Morning Gel Cleanser"],
+      ["Tonico", "Anua Heartleaf 77 Soothing Toner"],
+      ["Serum calmante", "Anua - Heartleaf 80% Soothing Ampoule"],
+      ["Crema gel", "Sioris - Deep In A Barrier Cream"]
+    ]
   },
   {
     tag: "Hidratacion",
     title: "Piel seca o deshidratada",
     goal: "Reducir tirantez y reforzar barrera con capas comodas.",
-    steps: ["Klairs Foaming Cleanser", "Sioris Mist", "Klairs Rich Moist Serum", "Benton Steam Cream", "SPF hidratante"]
+    morning: [
+      ["Limpiador suave", "Klairs - Rich Moist Foaming Cleanser"],
+      ["Esencia o tonico hidratante", "Sioris - Time Is Running Out Mist"],
+      ["Serum hidratante", "Klairs - Rich Moist Soothing Serum"],
+      ["Crema", "Benton - Snail Bee High Content Steam Cream"],
+      ["SPF", "Suntique - I'm Aqua Sun Essence SPF50"]
+    ],
+    night: [
+      ["Si SPF o maquillaje aceite/balsamo", "Klairs - Gentle Black Deep Cleansing Oil"],
+      ["Segunda limpieza", "Klairs - Rich Moist Foaming Cleanser"],
+      ["Esencia", "Sioris - Time Is Running Out Mist"],
+      ["Serum", "Klairs - Rich Moist Soothing Serum"],
+      ["Crema", "Benton - Snail Bee High Content Steam Cream"]
+    ]
   },
   {
     tag: "Calma",
     title: "Piel sensible o con rojeces",
     goal: "Bajar irritacion visible y simplificar la rutina diaria.",
-    steps: ["Klairs Cleanser", "Anua Heartleaf Toner", "Rovectin Cica Ampoule", "Benton Aloe Propolis Gel", "SPF suave"]
+    morning: [
+      ["Limpieza muy suave", "Klairs - Rich Moist Foaming Cleanser"],
+      ["Producto calmante", "Anua Heartleaf 77 Soothing Toner"],
+      ["Crema sencilla", "Benton - Aloe Propolis Soothing Gel"],
+      ["SPF", "Purito Daily Go-To Sunscreen"]
+    ],
+    night: [
+      ["Si SPF o maquillaje aceite/balsamo", "Klairs - Gentle Black Deep Cleansing Oil"],
+      ["Limpieza", "Klairs - Rich Moist Foaming Cleanser"],
+      ["Serum", "Rovectin - Cica Care Clearing Ampoule"],
+      ["Crema barrera", "Benton - Aloe Propolis Soothing Gel"]
+    ]
   },
   {
     tag: "Glow",
-    title: "Manchas y luminosidad",
+    title: "Piel con manchas, apagada o madura",
     goal: "Aportar luz y trabajar tono irregular con constancia y SPF.",
-    steps: ["Limpieza suave", "Esencia hidratante", "Belif Niacinamide + Vitamin C", "Crema ligera", "Protector solar diario"]
+    morning: [
+      ["Limpiador", "Klairs - Rich Moist Foaming Cleanser"],
+      ["Tonico o esencia", "Sioris - Time Is Running Out Mist"],
+      ["Serum iluminador", "Belif - Super Drops 5% Niacinamide & Vitamin C"],
+      ["Crema", "Benton - Snail Bee High Content Steam Cream"],
+      ["SPF", "COSRX Aloe Soothing Sun Cream SPF50+"]
+    ],
+    night: [
+      ["Limpieza", "Klairs - Gentle Black Deep Cleansing Oil"],
+      ["Segunda limpieza", "Klairs - Rich Moist Foaming Cleanser"],
+      ["Tratamiento", "Belif - Super Drops 5% Niacinamide & Vitamin C"],
+      ["Crema", "Benton - Snail Bee High Content Steam Cream"]
+    ]
   }
 ];
 
@@ -177,9 +277,20 @@ function renderRoutines() {
         <span class="routine-tag">${routine.tag}</span>
         <h3>${routine.title}</h3>
         <p>${routine.goal}</p>
-        <ul>
-          ${routine.steps.map((step) => `<li>${step}</li>`).join("")}
-        </ul>
+        <div class="routine-times">
+          <div class="routine-time">
+            <strong>Manana</strong>
+            <ul>
+              ${routine.morning.map(([step, product]) => `<li><span>${step}</span><em>${product}</em></li>`).join("")}
+            </ul>
+          </div>
+          <div class="routine-time">
+            <strong>Noche</strong>
+            <ul>
+              ${routine.night.map(([step, product]) => `<li><span>${step}</span><em>${product}</em></li>`).join("")}
+            </ul>
+          </div>
+        </div>
       </div>
       <a class="button secondary" href="#asesoria">Consultar pack</a>
     </article>
@@ -195,7 +306,7 @@ function renderProducts(filter = "Todos") {
         <span class="product-category">${product.category}</span>
         <h3>${product.brand} ${product.name}</h3>
         <p>${product.description}</p>
-        <p>${product.skin} · ${product.concern}</p>
+        <p>${product.skin} - ${product.concern}</p>
         <strong class="product-price">${product.price}</strong>
       </div>
     </article>
