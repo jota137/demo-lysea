@@ -6,21 +6,21 @@ const products = [
     skin: "Piel grasa o mixta",
     concern: "Grasa, poros e imperfecciones",
     price: "15,99 EUR",
-    description: "Limpiador suave de pH bajo para una limpieza diaria sin sensacion agresiva."
+    description: "Limpiador suave de pH bajo para una limpieza diaria sin sensación agresiva."
   },
   {
     brand: "Klairs",
     name: "Rich Moist Foaming Cleanser",
     category: "Limpiadores",
     skin: "Piel seca o sensible",
-    concern: "Tirantez y barrera cutanea",
+    concern: "Tirantez y barrera cutánea",
     price: "17,99 EUR",
-    description: "Espuma limpiadora confortable para rutinas que buscan suavidad e hidratacion."
+    description: "Espuma limpiadora confortable para rutinas que buscan suavidad e hidratación."
   },
   {
     brand: "Klairs",
     name: "Gentle Black Deep Cleansing Oil",
-    category: "Aceites y balsamos",
+    category: "Aceites y bálsamos",
     skin: "Piel seca o sensible",
     concern: "Doble limpieza",
     price: "24,99 EUR",
@@ -29,52 +29,52 @@ const products = [
   {
     brand: "Meisani",
     name: "Vitamin E-Raser Cleansing Oil",
-    category: "Aceites y balsamos",
+    category: "Aceites y bálsamos",
     skin: "Rutinas con SPF o maquillaje",
     concern: "Doble limpieza",
     price: "24,99 EUR",
-    description: "Aceite limpiador para iniciar una doble limpieza suave al final del dia."
+    description: "Aceite limpiador para iniciar una doble limpieza suave al final del día."
   },
   {
     brand: "Anua",
     name: "Heartleaf 77 Soothing Toner",
-    category: "Tonicos y esencias",
+    category: "Tónicos y esencias",
     skin: "Piel grasa o sensible",
     concern: "Calma, rojeces y equilibrio",
     price: "25,99 EUR",
-    description: "Tonico calmante para equilibrar la piel y preparar los siguientes pasos."
+    description: "Tónico calmante para equilibrar la piel y preparar los siguientes pasos."
   },
   {
     brand: "Sioris",
     name: "Time Is Running Out Mist",
-    category: "Tonicos y esencias",
+    category: "Tónicos y esencias",
     skin: "Piel seca o deshidratada",
-    concern: "Hidratacion y confort",
+    concern: "Hidratación y confort",
     price: "22,99 EUR",
     description: "Mist hidratante para aportar una capa ligera de confort durante la rutina."
   },
   {
     brand: "Benton",
     name: "Snail Bee High Content Skin Toner",
-    category: "Tonicos y esencias",
+    category: "Tónicos y esencias",
     skin: "Piel seca o apagada",
-    concern: "Hidratacion y textura",
+    concern: "Hidratación y textura",
     price: "22,99 EUR",
-    description: "Tonico hidratante para preparar la piel y aportar confort antes del tratamiento."
+    description: "Tónico hidratante para preparar la piel y aportar confort antes del tratamiento."
   },
   {
     brand: "Anua",
     name: "Heartleaf 80% Soothing Ampoule",
-    category: "Serums y tratamientos",
+    category: "Sérums y tratamientos",
     skin: "Piel grasa o mixta",
     concern: "Equilibrio e imperfecciones",
     price: "25,99 EUR",
-    description: "Ampolla ligera orientada a calmar y acompanar pieles con tendencia a desequilibrarse."
+    description: "Ampolla ligera orientada a calmar y acompañar pieles con tendencia a desequilibrarse."
   },
   {
     brand: "Anua",
     name: "Heartleaf 77% Soothing Toner",
-    category: "Serums y tratamientos",
+    category: "Sérums y tratamientos",
     skin: "Piel sensible o mixta",
     concern: "Calma y equilibrio",
     price: "25,99 EUR",
@@ -83,29 +83,29 @@ const products = [
   {
     brand: "Klairs",
     name: "Rich Moist Soothing Serum",
-    category: "Serums y tratamientos",
+    category: "Sérums y tratamientos",
     skin: "Piel seca o deshidratada",
-    concern: "Hidratacion y barrera",
+    concern: "Hidratación y barrera",
     price: "23,99 EUR",
-    description: "Serum hidratante para rutinas que necesitan reforzar confort y elasticidad."
+    description: "Sérum hidratante para rutinas que necesitan reforzar confort y elasticidad."
   },
   {
     brand: "Belif",
     name: "Super Drops Niacinamide & Vitamin C",
-    category: "Serums y tratamientos",
+    category: "Sérums y tratamientos",
     skin: "Manchas y luminosidad",
     concern: "Tono apagado",
     price: "32,99 EUR",
-    description: "Tratamiento iluminador para pieles que buscan un aspecto mas uniforme."
+    description: "Tratamiento iluminador para pieles que buscan un aspecto más uniforme."
   },
   {
     brand: "Rovectin",
     name: "Cica Care Clearing Ampoule",
-    category: "Serums y tratamientos",
+    category: "Sérums y tratamientos",
     skin: "Piel sensible o con rojeces",
     concern: "Calma y barrera",
     price: "25,99 EUR",
-    description: "Ampolla calmante para acompanar piel sensible, reactiva o con rojeces."
+    description: "Ampolla calmante para acompañar piel sensible, reactiva o con rojeces."
   },
   {
     brand: "Sioris",
@@ -121,9 +121,9 @@ const products = [
     name: "Snail Bee High Content Steam Cream",
     category: "Cremas hidratantes",
     skin: "Piel seca o deshidratada",
-    concern: "Hidratacion profunda",
+    concern: "Hidratación profunda",
     price: "23,99 EUR",
-    description: "Crema nutritiva para pieles que necesitan mas confort y sensacion de reparacion."
+    description: "Crema nutritiva para pieles que necesitan más confort y sensación de reparación."
   },
   {
     brand: "Benton",
@@ -139,18 +139,18 @@ const products = [
     name: "Aloe Soothing Sun Cream SPF50+",
     category: "Protectores solares",
     skin: "Piel grasa o mixta",
-    concern: "Proteccion diaria",
+    concern: "Protección diaria",
     price: "21,99 EUR",
-    description: "Protector solar diario con textura comoda para cerrar la rutina de manana."
+    description: "Protector solar diario con textura cómoda para cerrar la rutina de mañana."
   },
   {
     brand: "Peach",
     name: "Peptide Repair Lip Balm (Cacao)",
     category: "Extras",
     skin: "Labios secos",
-    concern: "Reparacion y confort",
+    concern: "Reparación y confort",
     price: "24,99 EUR",
-    description: "Balsamo labial reparador para completar la rutina diaria."
+    description: "Bálsamo labial reparador para completar la rutina diaria."
   },
   {
     brand: "Benton",
@@ -166,9 +166,9 @@ const products = [
     name: "Miracle Youth Serum (Retinol)",
     category: "Extras",
     skin: "Piel madura",
-    concern: "Lineas, textura y renovacion",
+    concern: "Líneas, textura y renovación",
     price: "32,99 EUR",
-    description: "Serum con retinol para rutinas de noche orientadas a textura y signos de edad."
+    description: "Sérum con retinol para rutinas de noche orientadas a textura y signos de edad."
   }
 ];
 
@@ -197,16 +197,16 @@ const routines = [
   {
     tag: "Equilibrio",
     title: "Piel grasa o mixta",
-    goal: "Controlar brillo, poros y sensacion de desequilibrio sin resecar.",
+    goal: "Controlar brillo, poros y sensación de desequilibrio sin resecar.",
     morning: [
       ["Limpiador", "COSRX - Low pH Good Morning Gel Cleanser"],
-      ["Serum", "Anua - Heartleaf 80% Soothing Ampoule"],
+      ["Sérum", "Anua - Heartleaf 80% Soothing Ampoule"],
       ["Protector solar", "COSRX Aloe Soothing Sun Cream SPF50+"]
     ],
     night: [
       ["Limpiador", "COSRX - Low pH Good Morning Gel Cleanser"],
-      ["Tonico", "Anua Heartleaf 77 Soothing Toner"],
-      ["Serum calmante", "Anua - Heartleaf 80% Soothing Ampoule"],
+      ["Tónico", "Anua Heartleaf 77 Soothing Toner"],
+      ["Sérum calmante", "Anua - Heartleaf 80% Soothing Ampoule"],
       ["Crema gel", "Sioris - Deep In A Barrier Cream"]
     ],
     packItems: [
@@ -218,21 +218,21 @@ const routines = [
     ]
   },
   {
-    tag: "Hidratacion",
+    tag: "Hidratación",
     title: "Piel seca o deshidratada",
-    goal: "Reducir tirantez y reforzar barrera con capas comodas.",
+    goal: "Reducir tirantez y reforzar barrera con capas cómodas.",
     morning: [
       ["Limpiador suave", "Klairs - Rich Moist Foaming Cleanser"],
-      ["Esencia o tonico hidratante", "Sioris - Time Is Running Out Mist"],
-      ["Serum hidratante", "Klairs - Rich Moist Soothing Serum"],
+      ["Esencia o tónico hidratante", "Sioris - Time Is Running Out Mist"],
+      ["Sérum hidratante", "Klairs - Rich Moist Soothing Serum"],
       ["Crema", "Benton - Snail Bee High Content Steam Cream"],
       ["SPF", "Suntique - I'm Aqua Sun Essence SPF50"]
     ],
     night: [
-      ["Si SPF o maquillaje aceite/balsamo", "Klairs - Gentle Black Deep Cleansing Oil"],
+      ["Si SPF o maquillaje aceite/bálsamo", "Klairs - Gentle Black Deep Cleansing Oil"],
       ["Segunda limpieza", "Klairs - Rich Moist Foaming Cleanser"],
       ["Esencia", "Sioris - Time Is Running Out Mist"],
-      ["Serum", "Klairs - Rich Moist Soothing Serum"],
+      ["Sérum", "Klairs - Rich Moist Soothing Serum"],
       ["Crema", "Benton - Snail Bee High Content Steam Cream"]
     ],
     packItems: [
@@ -247,7 +247,7 @@ const routines = [
   {
     tag: "Calma",
     title: "Piel sensible o con rojeces",
-    goal: "Bajar irritacion visible y simplificar la rutina diaria.",
+    goal: "Bajar irritación visible y simplificar la rutina diaria.",
     morning: [
       ["Limpieza muy suave", "Klairs - Rich Moist Foaming Cleanser"],
       ["Producto calmante", "Anua Heartleaf 77 Soothing Toner"],
@@ -255,9 +255,9 @@ const routines = [
       ["SPF", "Purito Daily Go-To Sunscreen"]
     ],
     night: [
-      ["Si SPF o maquillaje aceite/balsamo", "Klairs - Gentle Black Deep Cleansing Oil"],
+      ["Si SPF o maquillaje aceite/bálsamo", "Klairs - Gentle Black Deep Cleansing Oil"],
       ["Limpieza", "Klairs - Rich Moist Foaming Cleanser"],
-      ["Serum", "Rovectin - Cica Care Clearing Ampoule"],
+      ["Sérum", "Rovectin - Cica Care Clearing Ampoule"],
       ["Crema barrera", "Benton - Aloe Propolis Soothing Gel"]
     ],
     packItems: [
@@ -275,8 +275,8 @@ const routines = [
     goal: "Aportar luz y trabajar tono irregular con constancia y SPF.",
     morning: [
       ["Limpiador", "Klairs - Rich Moist Foaming Cleanser"],
-      ["Tonico o esencia", "Sioris - Time Is Running Out Mist"],
-      ["Serum iluminador", "Belif - Super Drops 5% Niacinamide & Vitamin C"],
+      ["Tónico o esencia", "Sioris - Time Is Running Out Mist"],
+      ["Sérum iluminador", "Belif - Super Drops 5% Niacinamide & Vitamin C"],
       ["Crema", "Benton - Snail Bee High Content Steam Cream"],
       ["SPF", "COSRX Aloe Soothing Sun Cream SPF50+"]
     ],
@@ -300,27 +300,32 @@ const routines = [
 const recommendations = {
   mixta: {
     title: "Piel grasa o mixta",
-    copy: "Te conviene una rutina ligera: limpiador suave, tonico equilibrante, serum calmante, crema barrera ligera y SPF."
+    copy: "Te conviene una rutina ligera: limpiador suave, tónico equilibrante, sérum calmante, crema barrera ligera y SPF."
   },
   seca: {
     title: "Piel seca o deshidratada",
-    copy: "Prioriza hidratacion por capas: limpieza suave, esencia o mist, serum hidratante, crema confortable y protector solar."
+    copy: "Prioriza hidratación por capas: limpieza suave, esencia o mist, sérum hidratante, crema confortable y protector solar."
   },
   sensible: {
     title: "Piel sensible o con rojeces",
-    copy: "Ve a lo simple: limpieza muy suave, tonico calmante, ampolla cica, gel o crema sencilla y SPF tolerable."
+    copy: "Ve a lo simple: limpieza muy suave, tónico calmante, ampolla cica, gel o crema sencilla y SPF tolerable."
   },
   glow: {
     title: "Manchas y luminosidad",
-    copy: "Combina antioxidantes o niacinamida con hidratacion y protector solar diario. Sin SPF, la rutina se queda corta."
+    copy: "Combina antioxidantes o niacinamida con hidratación y protector solar diario. Sin SPF, la rutina se queda corta."
   }
+};
+
+const routineLevelLabels = {
+  basica: "básica",
+  media: "media",
+  completa: "completa"
 };
 
 const routineGrid = document.querySelector("#routineGrid");
 const productGrid = document.querySelector("#productGrid");
 const filters = document.querySelectorAll(".filter");
 const skinFilters = document.querySelectorAll("[data-skin-filter]");
-const concernFilters = document.querySelectorAll("[data-concern-filter]");
 const sortProducts = document.querySelector("#sortProducts");
 const productCount = document.querySelector("#productCount");
 const quizButton = document.querySelector("#quizButton");
@@ -339,8 +344,7 @@ const clearCartButton = document.querySelector("#clearCartButton");
 const cart = [];
 const activeFilters = {
   category: "Todos",
-  skin: "Todos",
-  concern: "Todos"
+  skin: "Todos"
 };
 
 function parsePrice(price) {
@@ -369,11 +373,11 @@ function productImage(productName) {
 function stepLabel(product) {
   const labels = {
     "Limpiadores": "Paso 1",
-    "Aceites y balsamos": "Noche / doble limpieza",
-    "Tonicos y esencias": "Paso 2",
-    "Serums y tratamientos": "Tratamiento",
+    "Aceites y bálsamos": "Noche / doble limpieza",
+    "Tónicos y esencias": "Paso 2",
+    "Sérums y tratamientos": "Tratamiento",
     "Cremas hidratantes": "Sellar rutina",
-    "Protectores solares": "Manana / SPF",
+    "Protectores solares": "Mañana / SPF",
     "Extras": "Extra"
   };
   return labels[product.category] || "Rutina";
@@ -383,33 +387,23 @@ function skinTags(product) {
   const value = `${product.skin} ${product.concern}`.toLowerCase();
   const tags = [];
   if (value.includes("grasa") || value.includes("mixta") || value.includes("poros") || value.includes("brillo")) tags.push("grasa");
-  if (value.includes("seca") || value.includes("deshidratada") || value.includes("hidratacion") || value.includes("tirantez")) tags.push("seca");
+  if (value.includes("seca") || value.includes("deshidratada") || value.includes("hidratación") || value.includes("tirantez")) tags.push("seca");
   if (value.includes("sensible") || value.includes("rojeces") || value.includes("reactiva") || value.includes("calma")) tags.push("sensible");
   if (value.includes("manchas") || value.includes("madura") || value.includes("luminosidad") || value.includes("tono")) tags.push("madura");
   return tags;
 }
 
-function concernTags(product) {
-  const value = `${product.skin} ${product.concern} ${product.description}`.toLowerCase();
-  const tags = [];
-  if (value.includes("calma") || value.includes("rojeces") || value.includes("sensible") || value.includes("barrera")) tags.push("calma");
-  if (value.includes("hidratacion") || value.includes("hidratante") || value.includes("confort") || value.includes("tirantez")) tags.push("hidratacion");
-  if (value.includes("grasa") || value.includes("poros") || value.includes("brillo") || value.includes("imperfecciones")) tags.push("brillo");
-  if (value.includes("luminosidad") || value.includes("tono") || value.includes("manchas") || value.includes("iluminador") || value.includes("retinol")) tags.push("luminosidad");
-  return tags;
-}
-
 function displayCategory(product) {
-  if (product.category === "Aceites y balsamos") return "Limpieza / aceite limpiador";
+  if (product.category === "Aceites y bálsamos") return "Limpieza / aceite limpiador";
   return product.category;
 }
 
 function categoryIcon(product) {
   const icons = {
     "Limpiadores": '<svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 3c4 4 6 7 6 11a6 6 0 0 1-12 0c0-4 2-7 6-11Z"></path></svg>',
-    "Aceites y balsamos": '<svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 3c4 4 6 7 6 11a6 6 0 0 1-12 0c0-4 2-7 6-11Z"></path><path d="M9 15c1.6 1.2 4.4 1.2 6 0"></path></svg>',
-    "Tonicos y esencias": '<svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M9 3h6v4l3 4v8a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2v-8l3-4V3Z"></path><path d="M8 13h8"></path></svg>',
-    "Serums y tratamientos": '<svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M9 3h6v4l2 2v11H7V9l2-2V3Z"></path><path d="M10 13h4"></path></svg>',
+    "Aceites y bálsamos": '<svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 3c4 4 6 7 6 11a6 6 0 0 1-12 0c0-4 2-7 6-11Z"></path><path d="M9 15c1.6 1.2 4.4 1.2 6 0"></path></svg>',
+    "Tónicos y esencias": '<svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M9 3h6v4l3 4v8a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2v-8l3-4V3Z"></path><path d="M8 13h8"></path></svg>',
+    "Sérums y tratamientos": '<svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M9 3h6v4l2 2v11H7V9l2-2V3Z"></path><path d="M10 13h4"></path></svg>',
     "Cremas hidratantes": '<svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M7 10h10l-1 10H8L7 10Z"></path><path d="M9 10V6a3 3 0 0 1 6 0v4"></path></svg>',
     "Protectores solares": '<svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.6 4.6l2.1 2.1M17.3 17.3l2.1 2.1M19.4 4.6l-2.1 2.1M6.7 17.3l-2.1 2.1"></path></svg>',
     "Extras": '<svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 3l2.4 5 5.6.8-4 3.9.9 5.5-4.9-2.6-4.9 2.6.9-5.5-4-3.9 5.6-.8L12 3Z"></path></svg>'
@@ -496,7 +490,7 @@ function renderCart() {
       <div class="quantity-control">
         <button type="button" data-cart-minus="${item.id}" aria-label="Quitar unidad">-</button>
         <span>${item.quantity}</span>
-        <button type="button" data-cart-plus="${item.id}" aria-label="Anadir unidad">+</button>
+        <button type="button" data-cart-plus="${item.id}" aria-label="Añadir unidad">+</button>
       </div>
     </div>
   `).join("");
@@ -526,12 +520,12 @@ function renderRoutines() {
         <p>${routine.goal}</p>
         <div class="routine-badges" aria-label="Beneficios del pack">
           <span>Rutina completa</span>
-          <span>Manana y noche</span>
-          <span>Asesoria incluida</span>
+          <span>Mañana y noche</span>
+          <span>Asesoría incluida</span>
         </div>
         <div class="routine-times">
           <div class="routine-time">
-            <strong>Manana</strong>
+            <strong>Mañana</strong>
             <ul>
               ${routine.morning.map(([step, product]) => `<li><span>${step}</span><em>${product}</em><small>${routineProductPrice(product)}</small></li>`).join("")}
             </ul>
@@ -556,7 +550,7 @@ function renderRoutines() {
           <span>Precio pack</span>
           <strong>${formatPrice(packPrice(routine))}</strong>
         </div>
-        <button class="button secondary" type="button" data-pack="${routine.title}">Anadir pack</button>
+        <button class="button secondary" type="button" data-pack="${routine.title}">Añadir pack</button>
       </div>
     </article>
   `).join("");
@@ -564,7 +558,7 @@ function renderRoutines() {
 
 function matchesCategory(product) {
   if (activeFilters.category === "Todos") return true;
-  if (activeFilters.category === "Limpieza") return product.category === "Limpiadores" || product.category === "Aceites y balsamos";
+  if (activeFilters.category === "Limpieza") return product.category === "Limpiadores" || product.category === "Aceites y bálsamos";
   return product.category === activeFilters.category;
 }
 
@@ -581,8 +575,7 @@ function sortVisibleProducts(items) {
 function renderProducts() {
   const visible = sortVisibleProducts(products.filter((product) => {
     const skinMatch = activeFilters.skin === "Todos" || skinTags(product).includes(activeFilters.skin);
-    const concernMatch = activeFilters.concern === "Todos" || concernTags(product).includes(activeFilters.concern);
-    return matchesCategory(product) && skinMatch && concernMatch;
+    return matchesCategory(product) && skinMatch;
   }));
   if (productCount) productCount.textContent = `${visible.length} ${visible.length === 1 ? "producto" : "productos"}`;
   productGrid.innerHTML = visible.map((product) => {
@@ -594,7 +587,7 @@ function renderProducts() {
         ${images.length ? `<img src="${images[0]}" alt="${title}" data-main-image="${title}">` : `<div class="image-pending"><span>Imagen pendiente</span></div>`}
       </div>
       ${images.length > 1 ? `
-        <div class="product-thumbs" aria-label="Mas imagenes de ${title}">
+        <div class="product-thumbs" aria-label="Más imágenes de ${title}">
           ${images.map((image, index) => `<button class="${index === 0 ? "active" : ""}" type="button" data-gallery-product="${title}" data-gallery-image="${image}" aria-label="Ver imagen ${index + 1}"><img src="${image}" alt=""></button>`).join("")}
         </div>
       ` : ""}
@@ -615,7 +608,7 @@ function renderProducts() {
           <strong class="product-price">${product.price}</strong>
           <span>IVA incluido</span>
         </div>
-        <button class="button secondary" type="button" data-product="${productTitle(product)}">Anadir al carrito</button>
+        <button class="button secondary" type="button" data-product="${productTitle(product)}">Añadir al carrito</button>
       </div>
     </article>
   `;
@@ -636,15 +629,6 @@ skinFilters.forEach((button) => {
     skinFilters.forEach((item) => item.classList.remove("active"));
     button.classList.add("active");
     activeFilters.skin = button.dataset.skinFilter;
-    renderProducts();
-  });
-});
-
-concernFilters.forEach((button) => {
-  button.addEventListener("click", () => {
-    concernFilters.forEach((item) => item.classList.remove("active"));
-    button.classList.add("active");
-    activeFilters.concern = button.dataset.concernFilter;
     renderProducts();
   });
 });
@@ -708,7 +692,7 @@ quizButton.addEventListener("click", () => {
   quizResult.classList.add("visible");
   quizResult.innerHTML = `
     <strong>${recommendation.title}</strong>
-    <span>${recommendation.copy} Rutina ${level} con presupuesto ${budget}: empieza por los pasos esenciales y completa con tratamiento si tu piel lo tolera.</span>
+    <span>${recommendation.copy} Rutina ${routineLevelLabels[level]} con presupuesto ${budget}: empieza por los pasos esenciales y completa con tratamiento si tu piel lo tolera.</span>
   `;
 });
 
