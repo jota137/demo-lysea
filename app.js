@@ -350,6 +350,24 @@ function productTitle(product) {
   return `${product.brand} ${product.name}`;
 }
 
+function displayCategory(product) {
+  if (product.category === "Aceites y balsamos") return "Limpieza / aceite limpiador";
+  return product.category;
+}
+
+function categoryIcon(product) {
+  const icons = {
+    "Limpiadores": '<svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 3c4 4 6 7 6 11a6 6 0 0 1-12 0c0-4 2-7 6-11Z"></path></svg>',
+    "Aceites y balsamos": '<svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 3c4 4 6 7 6 11a6 6 0 0 1-12 0c0-4 2-7 6-11Z"></path><path d="M9 15c1.6 1.2 4.4 1.2 6 0"></path></svg>',
+    "Tonicos y esencias": '<svg aria-hidden="true" viewBox="0 0 24 24"><path d="M9 3h6v4l3 4v8a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2v-8l3-4V3Z"></path><path d="M8 13h8"></path></svg>',
+    "Serums y tratamientos": '<svg aria-hidden="true" viewBox="0 0 24 24"><path d="M9 3h6v4l2 2v11H7V9l2-2V3Z"></path><path d="M10 13h4"></path></svg>',
+    "Cremas hidratantes": '<svg aria-hidden="true" viewBox="0 0 24 24"><path d="M7 10h10l-1 10H8L7 10Z"></path><path d="M9 10V6a3 3 0 0 1 6 0v4"></path></svg>',
+    "Protectores solares": '<svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.6 4.6l2.1 2.1M17.3 17.3l2.1 2.1M19.4 4.6l-2.1 2.1M6.7 17.3l-2.1 2.1"></path></svg>',
+    "Extras": '<svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 3l2.4 5 5.6.8-4 3.9.9 5.5-4.9-2.6-4.9 2.6.9-5.5-4-3.9 5.6-.8L12 3Z"></path></svg>'
+  };
+  return icons[product.category] || icons.Extras;
+}
+
 function findProductPrice(name) {
   const product = findProductMatch(name);
   return product ? parsePrice(product.price) : 0;
@@ -477,7 +495,11 @@ function renderRoutines() {
 }
 
 function renderProducts(filter = "Todos") {
-  const visible = filter === "Todos" ? products : products.filter((product) => product.category === filter);
+  const visible = products.filter((product) => {
+    if (filter === "Todos") return true;
+    if (filter === "Limpieza") return product.category === "Limpiadores" || product.category === "Aceites y balsamos";
+    return product.category === filter;
+  });
   productGrid.innerHTML = visible.map((product) => {
     const title = productTitle(product);
     const images = productImages[title] || [];
@@ -492,7 +514,7 @@ function renderProducts(filter = "Todos") {
         </div>
       ` : ""}
       <div class="product-body">
-        <span class="product-category">${product.category}</span>
+        <span class="product-category">${categoryIcon(product)}${displayCategory(product)}</span>
         <h3>${product.brand} ${product.name}</h3>
         <p>${product.description}</p>
         <p>${product.skin} - ${product.concern}</p>
