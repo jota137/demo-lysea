@@ -319,6 +319,10 @@ const recommendations = {
 const routineGrid = document.querySelector("#routineGrid");
 const productGrid = document.querySelector("#productGrid");
 const filters = document.querySelectorAll(".filter");
+const skinFilters = document.querySelectorAll("[data-skin-filter]");
+const concernFilters = document.querySelectorAll("[data-concern-filter]");
+const sortProducts = document.querySelector("#sortProducts");
+const productCount = document.querySelector("#productCount");
 const quizButton = document.querySelector("#quizButton");
 const quizResult = document.querySelector("#quizResult");
 const cartToggle = document.querySelector("#cartToggle");
@@ -333,6 +337,11 @@ const checkoutButton = document.querySelector("#checkoutButton");
 const clearCartButton = document.querySelector("#clearCartButton");
 
 const cart = [];
+const activeFilters = {
+  category: "Todos",
+  skin: "Todos",
+  concern: "Todos"
+};
 
 function parsePrice(price) {
   return Number(price.replace(" EUR", "").replace(",", "."));
@@ -348,6 +357,46 @@ function normalizeName(value) {
 
 function productTitle(product) {
   return `${product.brand} ${product.name}`;
+}
+
+function productImage(productName) {
+  const product = findProductMatch(productName);
+  if (!product) return "";
+  const images = productImages[productTitle(product)] || [];
+  return images[0] || "";
+}
+
+function stepLabel(product) {
+  const labels = {
+    "Limpiadores": "Paso 1",
+    "Aceites y balsamos": "Noche / doble limpieza",
+    "Tonicos y esencias": "Paso 2",
+    "Serums y tratamientos": "Tratamiento",
+    "Cremas hidratantes": "Sellar rutina",
+    "Protectores solares": "Manana / SPF",
+    "Extras": "Extra"
+  };
+  return labels[product.category] || "Rutina";
+}
+
+function skinTags(product) {
+  const value = `${product.skin} ${product.concern}`.toLowerCase();
+  const tags = [];
+  if (value.includes("grasa") || value.includes("mixta") || value.includes("poros") || value.includes("brillo")) tags.push("grasa");
+  if (value.includes("seca") || value.includes("deshidratada") || value.includes("hidratacion") || value.includes("tirantez")) tags.push("seca");
+  if (value.includes("sensible") || value.includes("rojeces") || value.includes("reactiva") || value.includes("calma")) tags.push("sensible");
+  if (value.includes("manchas") || value.includes("madura") || value.includes("luminosidad") || value.includes("tono")) tags.push("madura");
+  return tags;
+}
+
+function concernTags(product) {
+  const value = `${product.skin} ${product.concern} ${product.description}`.toLowerCase();
+  const tags = [];
+  if (value.includes("calma") || value.includes("rojeces") || value.includes("sensible") || value.includes("barrera")) tags.push("calma");
+  if (value.includes("hidratacion") || value.includes("hidratante") || value.includes("confort") || value.includes("tirantez")) tags.push("hidratacion");
+  if (value.includes("grasa") || value.includes("poros") || value.includes("brillo") || value.includes("imperfecciones")) tags.push("brillo");
+  if (value.includes("luminosidad") || value.includes("tono") || value.includes("manchas") || value.includes("iluminador") || value.includes("retinol")) tags.push("luminosidad");
+  return tags;
 }
 
 function displayCategory(product) {
@@ -384,6 +433,10 @@ function findProductMatch(name) {
 
 function packPrice(routine) {
   return routine.packItems.reduce((total, item) => total + findProductPrice(item), 0);
+}
+
+function packImages(routine) {
+  return uniquePackItems(routine).map(productImage).filter(Boolean).slice(0, 4);
 }
 
 function routineProductPrice(productName) {
@@ -460,10 +513,22 @@ function checkoutByWhatsApp() {
 function renderRoutines() {
   routineGrid.innerHTML = routines.map((routine) => `
     <article class="routine-card">
+      <div class="routine-visual" aria-hidden="true">
+        ${packImages(routine).map((image) => `<img src="${image}" alt="">`).join("")}
+        <span>${uniquePackItems(routine).length} productos</span>
+      </div>
       <div>
-        <span class="routine-tag">${routine.tag}</span>
+        <div class="routine-card-head">
+          <span class="routine-tag">${routine.tag}</span>
+          <span class="stock-pill">Disponible</span>
+        </div>
         <h3>${routine.title}</h3>
         <p>${routine.goal}</p>
+        <div class="routine-badges" aria-label="Beneficios del pack">
+          <span>Rutina completa</span>
+          <span>Manana y noche</span>
+          <span>Asesoria incluida</span>
+        </div>
         <div class="routine-times">
           <div class="routine-time">
             <strong>Manana</strong>
@@ -487,19 +552,39 @@ function renderRoutines() {
         </div>
       </div>
       <div class="pack-footer">
-        <strong>${formatPrice(packPrice(routine))}</strong>
+        <div>
+          <span>Precio pack</span>
+          <strong>${formatPrice(packPrice(routine))}</strong>
+        </div>
         <button class="button secondary" type="button" data-pack="${routine.title}">Anadir pack</button>
       </div>
     </article>
   `).join("");
 }
 
-function renderProducts(filter = "Todos") {
-  const visible = products.filter((product) => {
-    if (filter === "Todos") return true;
-    if (filter === "Limpieza") return product.category === "Limpiadores" || product.category === "Aceites y balsamos";
-    return product.category === filter;
+function matchesCategory(product) {
+  if (activeFilters.category === "Todos") return true;
+  if (activeFilters.category === "Limpieza") return product.category === "Limpiadores" || product.category === "Aceites y balsamos";
+  return product.category === activeFilters.category;
+}
+
+function sortVisibleProducts(items) {
+  const mode = sortProducts ? sortProducts.value : "featured";
+  return [...items].sort((a, b) => {
+    if (mode === "price-asc") return parsePrice(a.price) - parsePrice(b.price);
+    if (mode === "price-desc") return parsePrice(b.price) - parsePrice(a.price);
+    if (mode === "brand") return productTitle(a).localeCompare(productTitle(b));
+    return products.indexOf(a) - products.indexOf(b);
   });
+}
+
+function renderProducts() {
+  const visible = sortVisibleProducts(products.filter((product) => {
+    const skinMatch = activeFilters.skin === "Todos" || skinTags(product).includes(activeFilters.skin);
+    const concernMatch = activeFilters.concern === "Todos" || concernTags(product).includes(activeFilters.concern);
+    return matchesCategory(product) && skinMatch && concernMatch;
+  }));
+  if (productCount) productCount.textContent = `${visible.length} ${visible.length === 1 ? "producto" : "productos"}`;
   productGrid.innerHTML = visible.map((product) => {
     const title = productTitle(product);
     const images = productImages[title] || [];
@@ -514,11 +599,22 @@ function renderProducts(filter = "Todos") {
         </div>
       ` : ""}
       <div class="product-body">
+        <div class="product-card-head">
+          <span>${product.brand}</span>
+          <span class="stock-pill">Disponible</span>
+        </div>
         <span class="product-category">${categoryIcon(product)}${displayCategory(product)}</span>
         <h3>${product.brand} ${product.name}</h3>
         <p>${product.description}</p>
-        <p>${product.skin} - ${product.concern}</p>
-        <strong class="product-price">${product.price}</strong>
+        <div class="product-meta">
+          <span>${stepLabel(product)}</span>
+          <span>${product.skin}</span>
+        </div>
+        <p>${product.concern}</p>
+        <div class="product-buy-row">
+          <strong class="product-price">${product.price}</strong>
+          <span>IVA incluido</span>
+        </div>
         <button class="button secondary" type="button" data-product="${productTitle(product)}">Anadir al carrito</button>
       </div>
     </article>
@@ -530,9 +626,30 @@ filters.forEach((button) => {
   button.addEventListener("click", () => {
     filters.forEach((item) => item.classList.remove("active"));
     button.classList.add("active");
-    renderProducts(button.dataset.filter);
+    activeFilters.category = button.dataset.filter;
+    renderProducts();
   });
 });
+
+skinFilters.forEach((button) => {
+  button.addEventListener("click", () => {
+    skinFilters.forEach((item) => item.classList.remove("active"));
+    button.classList.add("active");
+    activeFilters.skin = button.dataset.skinFilter;
+    renderProducts();
+  });
+});
+
+concernFilters.forEach((button) => {
+  button.addEventListener("click", () => {
+    concernFilters.forEach((item) => item.classList.remove("active"));
+    button.classList.add("active");
+    activeFilters.concern = button.dataset.concernFilter;
+    renderProducts();
+  });
+});
+
+if (sortProducts) sortProducts.addEventListener("change", renderProducts);
 
 routineGrid.addEventListener("click", (event) => {
   const button = event.target.closest("[data-pack]");
