@@ -500,7 +500,7 @@ function checkoutByWhatsApp() {
   if (!cart.length) return;
   const lines = cart.map((item) => `- ${item.quantity} x ${item.name} (${formatPrice(item.price * item.quantity)})`);
   const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-  const message = encodeURIComponent(`Hola Lysea, quiero consultar este pedido:\n\n${lines.join("\n")}\n\nTotal estimado: ${formatPrice(total)}`);
+  const message = encodeURIComponent(`Hola Lyséa, quiero consultar este pedido:\n\n${lines.join("\n")}\n\nTotal estimado: ${formatPrice(total)}`);
   window.open(`https://wa.me/?text=${message}`, "_blank", "noreferrer");
 }
 
